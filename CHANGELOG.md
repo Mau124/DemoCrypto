@@ -75,7 +75,7 @@
 ## [1.0.4] 2021-08-27
 ### Improvements
 
-- Bump UI - [Volt Dashboard v1.4.1](https://github.com/themesberg/volt-bootstrap-5-dashboard/releases) 
+- Bump UI - [Volt Dashboard v1.4.1](https://github.com/ONI/volt-bootstrap-5-dashboard/releases) 
   
 ## Unreleased 2021-05-26
 ### Tooling
@@ -96,7 +96,7 @@
 ### Improvements
 
 - Bump UI: [Jinja Volt](https://github.com/app-generator/jinja-volt-dashboard/releases) v1.0.1
-- [Volt Dashboard](https://github.com/themesberg/volt-bootstrap-5-dashboard/releases) v1.3.2
+- [Volt Dashboard](https://github.com/ONI/volt-bootstrap-5-dashboard/releases) v1.3.2
 
 ## [1.0.1] 2021-03-18
 ### Improvements
@@ -109,6 +109,6 @@
 ## [1.0.0] 2021-01-17
 
 - Bump UI: [Jinja Volt](https://github.com/app-generator/jinja-volt-dashboard/releases) v1.0.0
-- [Volt Dashboard](https://github.com/themesberg/volt-bootstrap-5-dashboard/releases/tag) v1.2.0 
+- [Volt Dashboard](https://github.com/ONI/volt-bootstrap-5-dashboard/releases/tag) v1.2.0 
 - Codebase: [Flask Dashboard](https://github.com/app-generator/boilerplate-code-flask-dashboard/releases) v1.0.3
 

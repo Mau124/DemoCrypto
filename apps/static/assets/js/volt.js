@@ -4,10 +4,10 @@
 * Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 Themesberg (https://www.themesberg.com)
+* Product Page: https://ONI.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 ONI (https://www.ONI.com)
 
-* Designed and coded by https://themesberg.com
+* Designed and coded by https://ONI.com
 
 =========================================================
 

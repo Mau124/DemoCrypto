@@ -1,9 +1,9 @@
 {
-    "name": "@themesberg/volt-bootstrap-5-dashboard",
+    "name": "@ONI/volt-bootstrap-5-dashboard",
     "version": "1.4.1",
     "description": "Volt - Bootstrap 5 Dashboard",
     "main": "gulpfile.js",
-    "author": "Themesberg",
+    "author": "ONI",
     "keywords": [
         "bootstrap",
         "bootstrap5",
@@ -18,15 +18,15 @@
         "bootstrap 5 datepicker",
         "bootstrap 5 beta 1"
     ],
-    "homepage": "https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard",
+    "homepage": "https://ONI.com/product/admin-dashboard/volt-bootstrap-5-dashboard",
     "bugs": {
-        "url": "https://github.com/themesberg/volt-bootstrap-5-dashboard/issues"
+        "url": "https://github.com/ONI/volt-bootstrap-5-dashboard/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/themesberg/volt-bootstrap-5-dashboard"
+        "url": "https://github.com/ONI/volt-bootstrap-5-dashboard"
     },
-    "license": "https://github.com/themesberg/volt-bootstrap-5-dashboard/blob/master/LICENSE.md",
+    "license": "https://github.com/ONI/volt-bootstrap-5-dashboard/blob/master/LICENSE.md",
     "dependencies": {
         "@popperjs/core": "^2.9.2",
         "bootstrap": "^5.0.2",

@@ -1,6 +1,6 @@
 {% extends "layouts/base-fullscreen.html" %}
 
-{% block title %} Sign IN {% endblock %} 
+{% block title %} Sign in {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -10,22 +10,19 @@
     <main>
         <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
             <div class="container">
-                <p class="text-center">
-                    Open-source Flask Dashboard
-                </p>
                 <div class="row justify-content-center form-bg-image" data-background-lg="{{ config.ASSETS_ROOT }}/img/illustrations/signin.svg">
                     <div class="col-12 d-flex align-items-center justify-content-center">
                         <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">
-                                    Flask Volt - Sign IN
+                                    ONI Dashboard Demo
                                 </h1>
                                 <br />
                                 <p>
                                     {% if msg %}
                                         <span class="text-danger">{{ msg | safe }}</span>
                                     {% else %}
-                                        Add your credentials
+                                        Inicia sesion con tus credenciales
                                     {% endif %}                                     
                                 </p> 
                             </div>
@@ -35,24 +32,24 @@
 
                                 <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label for="email">Username</label>
+                                    <label for="email">Usuario</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">
                                             <span class="fas fa-user-circle"></span>
                                         </span>
-                                        {{ form.username(placeholder="Username", class="form-control") }}
+                                        {{ form.username(placeholder="Usuario", class="form-control") }}
                                     </div>  
                                 </div>
                                 <!-- End of Form -->
                                 <div class="form-group">
                                     <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label for="password">Your Password</label>
+                                        <label for="password">Contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon2">
                                                 <span class="fas fa-unlock-alt"></span>
                                             </span>
-                                            {{ form.password(placeholder="Password", class="form-control", type="password") }}
+                                            {{ form.password(placeholder="Contraseña", class="form-control", type="password") }}
                                         </div>  
                                     </div>
                                     <!-- End of Form -->
@@ -60,16 +57,16 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="remember">
                                             <label class="form-check-label mb-0" for="remember">
-                                              Remember me
+                                              Recordarme
                                             </label>
                                         </div>
                                         <div>
-                                            <a href="{{ url_for('authentication_blueprint.register') }}" class="fw-bold text-right">Register</a>
+                                            <a href="{{ url_for('authentication_blueprint.register') }}" class="fw-bold text-right">Nuevo Usuario</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" name="login" class="btn btn-gray-800">Sign IN</button>
+                                    <button type="submit" name="login" class="btn btn-gray-800">Iniciar Sesion</button>
                                 </div>
                             </form>
                             <br />
