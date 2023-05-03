@@ -1,20 +1,3 @@
-/*
-
-=========================================================
-* Volt Pro - Premium Bootstrap 5 Dashboard
-=========================================================
-
-* Product Page: https://ONI.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 ONI (https://www.ONI.com)
-
-* Designed and coded by https://ONI.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal. Contact us if you want to remove it.
-
-*/
-
 "use strict";
 const d = document;
 d.addEventListener("DOMContentLoaded", function(event) {
