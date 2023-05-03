@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS `Users` 
+DROP TABLE IF EXISTS `Reports`
+
+CREATE TABLE `Users` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(30) NOT NULL,
+	`pass` VARCHAR(30) NOT NULL,
+	`public_key` VARCHAR(200) NOT NULL,
+	`private_key` VARCHAR(200) NOT NULL,
+	`auth_key` VARCHAR(50) NOT NULL,
+	PRIMARY KEY (`id`,`username`)
+);
+
+CREATE TABLE `Reports` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL,
+	`date` DATE NOT NULL,
+	`user` VARCHAR(30),
+    `comments` VARCHAR(200),
+    `url` VARCHAR(100),
+	PRIMARY KEY (`id`),
+    FOREIGN KEY (`user`) REFERENCES `Users` (`username`)
+);
+
+INSERT INTO Users (username, pass, public_key, private_key, auth_key) VALUES ('tom', 'tomarc', '96379a17e179f051d506ecbabb56859c7aaf570d76f9a5085d399f5e31ea5abc0951430c41473d942b89778c9e5cc554c86e930dd413235ed138845114719394', '767bcc4af5ec76ec00d8e715d4b72261f5ab3bdda6f43485af19adb2f150cd19', 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR');
+INSERT INTO Users (username, pass, public_key, private_key, auth_key) VALUES ('mau', 'mauflores', '24074fe8e311b5cae9167bb2077f0c3db1a8aa672038609a3ab3285d23d8b2c1d4d282fdbfd70c948f00f62d033f8bb6ae0095038ac5317c529363357f4844bd', 'e525571e6d5d52049c6343f9dc474ab58549603d34720341c1d9c16a1d2e42a1', 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR');
+INSERT INTO Users (username, pass, public_key, private_key, auth_key) VALUES ('alejandro', 'oniformula', '12c27ef5e36e8a7358871feb6dd4521a8b584cbdd3a6600278eac8fcd93f97d73f71fc0025bf7df43ff5b1e0c193886f8e6d995959bc2f39bb34e2beb45165a1', 'c7c05166985bddca9ad8987f0e52813d98a55789f614368481ac7dfa33f624aa', 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR');
+INSERT INTO Users (username, pass, public_key, private_key, auth_key) VALUES ('emmanuel', 'egodinez', '25993834967388e4b9fa2fe5c08331e14e0c059824645fe7524f8b6874825953be1e6a954576c0b2b427186eb90d79514a8d4daa5d98a002a77a12756e8d06ea', 'dc2177063e7f6362c2151f4c1eaf937c15c407c607989068f9ead37cddee8cb1', 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR');
+INSERT INTO Users (username, pass, public_key, private_key, auth_key) VALUES ('oni', 'oni', 'cbbbd7f052b45129fe8c73ad311d0848af3e2e425af3dc7f2071797c682fab8a1d5dc13eced3e842bf46875b879e31ad8ee4ac878d65136637a65a1f6610ca06', 'd931111d4079484b2fab3ace9128753d813eec0c9c64d7900dc4b097f254ebc6', 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR');

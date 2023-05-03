@@ -7,6 +7,14 @@
 
 {% block content %}
 
+{% if success %}
+<div class="alert alert-success alert-dismissible">
+    <strong>Listo!</strong> El registro se ha guardado exitosamente.
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  </div>
+
+{% endif %}
+
     <div class="py-4">
         <div class="dropdown">
             <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,8 +54,7 @@
                                 <tr>
                                     <th class="border-bottom" scope="col">Id</th>
                                     <th class="border-bottom" scope="col">Fecha</th>
-                                    <th class="border-bottom" scope="col">Direccion</th>
-                                    <th class="border-bottom" scope="col">Firma Digital</th>
+                                    <th class="border-bottom" scope="col">Nombre reporte</th>
                                     <th class="border-bottom" scope="col">Usuario</th>
                                     <th class="border-bottom" scope="col">Visualizar</th>
                                     <th class="border-bottom" scope="col">Descargar</th>
@@ -63,9 +70,6 @@
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         /demo/admin/index.html
-                                    </td>
-                                    <td class="fw-bolder text-gray-500">
-                                        XAFE!W#435DFGS1!^#sa
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         Tom
@@ -94,9 +98,6 @@
                                         /demo/admin/forms.html
                                     </td>
                                     <td class="fw-bolder text-gray-500">
-                                        SG4$FE!WGS1FG#25G6
-                                    </td>
-                                    <td class="fw-bolder text-gray-500">
                                         Alejandro
                                     </td>
                                     <td class="fw-bolder text-gray-500">
@@ -121,9 +122,6 @@
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         /demo/admin/util.html
-                                    </td>
-                                    <td class="fw-bolder text-gray-500">
-                                        KGL33789#^!ad41SK9@
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         Mauricio
@@ -152,9 +150,6 @@
                                         /demo/admin/validation.html
                                     </td>
                                     <td class="fw-bolder text-gray-500">
-                                        LD578@#!AHFD37!*$FL
-                                    </td>
-                                    <td class="fw-bolder text-gray-500">
                                         Tom
                                     </td>
                                     <td class="fw-bolder text-gray-500">
@@ -179,10 +174,6 @@
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         /demo/admin/modals.html
-                                    </td>
-                                    <td class="fw-bolder text-gray-500">
-                                        <div class="d-flex">
-                                        945FHALR#AAS89F1#a
                                     </td>
                                     <td class="fw-bolder text-gray-500">
                                         Emmanuel

@@ -1,0 +1,108 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Transactions {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+      <div class="d-block mb-4 mb-md-0">
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+              <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                  <li class="breadcrumb-item">
+                      <a href="#">
+                          <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                      </a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">ONI</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Generar</li>
+              </ol>
+          </nav>
+          <h2 class="h4">Nuevo reporte</h2>
+      </div>
+  </div>
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card border-0 shadow components-section">
+            <form name="generate" action="" method="post">
+                <div class="card-body">     
+                    <div class="row mb-4">
+                        <div class="col-lg-4 col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="text">Titulo Reporte</label>
+                                <input type="text" class="form-control" id="title" placeholder="Titulo" name="title" required>              
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="exampleInputIconPassword">Nombre tutor</label>
+                                <div class="input-group">
+                                    <input class="form-control" id="exampleInput" placeholder="Nombre" name="first_name_tutor" aria-label="Nombre">
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="exampleInputIconPassword">Apellidos tutor</label>
+                                <div class="input-group">
+                                    <input class="form-control" id="exampleInput2" placeholder="Apellidos" name="last_name_tutor" aria-label="last_name_kid_tutor">
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="firstName">Nombre niño</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Nombre" name="first_name_kid" required>               
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="usernameValidate">Apellidos niño</label>
+                                <input type="text" class="form-control" id="usernameValidate" placeholder="Apellidos" name="last_name_kid" required>              
+                            </div>
+                            <!-- End of Form -->
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="mb-3">
+                                <label for="birthday">Fecha de nacimiento</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                    </span>
+                                    <input data-datepicker="" class="form-control" id="birthday" type="text" placeholder="dd/mm/yyyy" name="date" required>                                               
+                                </div>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="usernameValidate">Tipo ONI Formula</label>
+                                <input type="text" class="form-control" id="usernameValidate2" placeholder="Oni Formula" name="formula" required>              
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="usernameValidate">Cantidad de ONIFormula</label>
+                                <input type="number" class="form-control" id="usernameValidate3" placeholder="0" name="amount" required>              
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="my-4">
+                                <label for="textarea">Comentarios</label>
+                                <textarea class="form-control" placeholder="Ingrese su mensaje..." id="textarea" name="comment" rows="4"></textarea>
+                            </div>
+                            <!-- End of Form -->
+                        </div>
+                    <center><button class="btn btn-primary" type="submit">Generar Reporte</button></center>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
