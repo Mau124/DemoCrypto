@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import render_template, redirect, request, url_for
+from flask import render_template, redirect, request, url_for, flash
 from flask_login import (
     current_user,
     login_user,
@@ -16,6 +16,7 @@ from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
+import pyotp
 
 from apps.authentication.util import verify_pass
 
@@ -34,7 +35,7 @@ def login_github():
     res = github.get("/user")
     return redirect(url_for('home_blueprint.index'))
 
-@blueprint.route('/login', methods=['GET', 'POST'])
+@blueprint.route('/login/', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
     if 'login' in request.form:
@@ -50,7 +51,7 @@ def login():
         if user and verify_pass(password, user.password):
 
             login_user(user)
-            return redirect(url_for('authentication_blueprint.route_default'))
+            return redirect(url_for('home_blueprint.login_2fa'))
 
         # Something (user or pass) is not ok
         return render_template('accounts/login.html',
@@ -61,6 +62,37 @@ def login():
         return render_template('accounts/login.html',
                                form=login_form)
     return redirect(url_for('home_blueprint.index'))
+
+
+# 2FA page route
+@blueprint.route("/login/2fa/", methods=['GET'])
+def login_2fa():
+    # generating random secret key for authentication
+    #secret = pyotp.random_base32()
+    secret = 'KDOOIR3DSI7NQXPKNULURPBWXBE5WZFJ'
+    #print('El Tomsecreto:', secret)
+
+    return render_template("login_2fa.html", secret=secret)
+
+
+# 2FA form route
+@blueprint.route("/login/2fa/", methods=["POST"])
+def login_2fa_form():
+
+    # getting secret key used by user
+    secret = request.form.get("secret")
+    # getting OTP provided by user
+    otp = int(request.form.get("otp"))
+
+    # verifying submitted OTP with PyOTP
+    if pyotp.TOTP(secret).verify(otp):
+        # inform users if OTP is valid
+        flash("The TOTP 2FA token is valid", "success")
+        return redirect(url_for("home_blueprint.index"))
+    else:
+        # inform users if OTP is invalid
+        flash("You have supplied an invalid 2FA token!", "danger")
+        return redirect(url_for("authentication_blueprint.login_2fa"))
 
 
 @blueprint.route('/register', methods=['GET', 'POST'])

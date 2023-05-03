@@ -4,9 +4,10 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from apps.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, flash, redirect, url_for
 from flask_login import login_required
 from jinja2 import TemplateNotFound
+import pyotp
 
 
 @blueprint.route('/index')
@@ -14,6 +15,33 @@ from jinja2 import TemplateNotFound
 def index():
 
     return render_template('home/index.html', segment='index')
+
+@blueprint.get('/login_2fa')
+def login_2fa():
+
+    # Detect the current page
+    segment = get_segment(request)
+    secret = 'M23RCSMWMLSZJTICTXSRC2OKG6X7NZXR'
+
+    return render_template('accounts/login_2fa.html', segment=segment, secret=secret)
+
+@blueprint.post('/login_2fa')
+def login_2fa_post():
+    
+    # getting secret key used by user
+    secret = request.form.get("secret")
+    # getting OTP provided by user
+    otp = int(request.form.get("otp"))
+
+    # verifying submitted OTP with PyOTP
+    if pyotp.TOTP(secret).verify(otp):
+        # inform users if OTP is valid
+        flash("The TOTP 2FA token is valid", "success")
+        return redirect(url_for("home_blueprint.index"))
+    else:
+        # inform users if OTP is invalid
+        flash("You have supplied an invalid 2FA token!", "danger")
+        return redirect(url_for("home_blueprint.login_2fa"))
 
 
 @blueprint.route('/<template>')
