@@ -53,5 +53,6 @@ def create_app(config):
 
     app.register_blueprint(github_blueprint, url_prefix="/login") 
     
-    configure_database(app)
+    #configure_database(app)
+    #db.init_app(app)
     return app

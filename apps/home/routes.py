@@ -8,13 +8,16 @@ from flask import render_template, request, flash, redirect, url_for
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 import pyotp
-
+from apps.authentication.models import Reports
+from apps import db
 
 @blueprint.route('/index')
 @login_required
 def index():
+    reports = db.session.query(Reports).all()
 
-    return render_template('home/index.html', segment='index')
+    
+    return render_template('home/index.html', segment='index', reports=reports)
 
 @blueprint.get('/login_2fa')
 def login_2fa():
