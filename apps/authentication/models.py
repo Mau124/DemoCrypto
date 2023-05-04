@@ -39,6 +39,16 @@ class Users(db.Model, UserMixin):
 
     def __repr__(self):
         return str(self.username) 
+    
+class Reports(db.Model):
+
+    __tablename__ = 'Reports'
+    id        = db.Column(db.Integer, primary_key=True)
+    name      = db.Column(db.String(50))
+    date      = db.Column(db.Date)
+    username  = db.Column(db.String(30))
+    comments  = db.Column(db.String(200))
+    url       = db.Column(db.String(100))
 
 @login_manager.user_loader
 def user_loader(id):
