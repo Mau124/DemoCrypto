@@ -20,6 +20,9 @@ class Users(db.Model, UserMixin):
     username      = db.Column(db.String(64), unique=True)
     email         = db.Column(db.String(64), unique=True)
     password      = db.Column(db.LargeBinary)
+    public_key    = db.Column(db.String(200))
+    private_key   = db.Column(db.String(200))
+    auth_key      = db.Column(db.String(200))
 
     oauth_github  = db.Column(db.String(100), nullable=True)
 
@@ -49,6 +52,8 @@ class Reports(db.Model):
     username  = db.Column(db.String(30))
     comments  = db.Column(db.String(200))
     url       = db.Column(db.String(100))
+    signature = db.Column(db.String(300))
+
 
 @login_manager.user_loader
 def user_loader(id):

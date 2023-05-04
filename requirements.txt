@@ -17,5 +17,6 @@ blinker==1.4
 pyOpenSSL
 flask_bootstrap
 pyotp
+pandas
 # flask_mysqldb
 # psycopg2-binary
