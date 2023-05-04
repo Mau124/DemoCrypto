@@ -63,7 +63,6 @@ def generate_post():
 
     return render_template('home/index.html',success=True)
 
-
 @blueprint.route('/download/<path:url_file>/<string:signature>')
 def download_report(url_file, signature=None):
     print(url_file)
